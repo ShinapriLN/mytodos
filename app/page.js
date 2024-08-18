@@ -18,6 +18,7 @@ const myTodos = async () => {
 
 export default function Home() {
   const [data, setData] = useState([])
+  const [filter, setFilter] = useState(null)
   const initData = async () => {
     try{
       const result = await myTodos()
@@ -32,8 +33,8 @@ export default function Home() {
   return (
     <div className={`bg-gradient-to-br from-pink-600  to-blue-700 select-none w-full h-fit min-h-screen grid grid-cols-1 justify-items-center gap-5 ${outfit_font.className}`}>
       <h1>My To-do List or what do you want to add (Anything{`><`})</h1>
-      <SearchBox data={data} />
-      <TodoList data={data} /> 
+      <SearchBox data={data} setFilter={setFilter} />
+      <TodoList data={data} filter={filter} />
     </div>
   );
 }
