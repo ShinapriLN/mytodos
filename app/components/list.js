@@ -98,6 +98,7 @@ export default function TodoList({ data, filter }) {
                                         <p className="italic text-sm text-gray-600">
                                             Mood : {`${focusObj.mood}`}<br />
                                             Publish : {`${new Date(focusObj.create_at).getDate()}-${(new Date(focusObj.create_at).getMonth()) + 1}-${new Date(focusObj.create_at).getFullYear()} ${new Date(focusObj.create_at).getHours()}:${(new Date(focusObj.create_at).getMinutes() < 10) ? "0" + String(new Date(focusObj.create_at).getMinutes()) : new Date(focusObj.create_at).getMinutes()}`}
+                                            <br /><b>{`${focusObj.name}`}</b>
                                         </p>
 
                                     </ModalBody>
